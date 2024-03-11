@@ -22,6 +22,7 @@ Se todas as etapas indicarem "Aprovado", o pedido é marcado como "Aprovado".
 Se alguma etapa indicar "Aprovado com observação", o pedido é marcado como "Aprovado com observação".
 
 Fluxo
+
 1 - Um pedido é feito via HTTP POST para a função PedidoHttpStart, passando os detalhes do pedido.
 
 2 - A função PedidoHttpStart inicia uma nova instância da PedidoApprovalFunction, passando o objeto Pedido.
