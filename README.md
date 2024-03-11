@@ -23,8 +23,13 @@ Se alguma etapa indicar "Aprovado com observação", o pedido é marcado como "A
 
 Fluxo
 1 - Um pedido é feito via HTTP POST para a função PedidoHttpStart, passando os detalhes do pedido.
+
 2 - A função PedidoHttpStart inicia uma nova instância da PedidoApprovalFunction, passando o objeto Pedido.
+
 3 - O PedidoApprovalFunction inicia as atividades SubmeterPedido, PrimeiraAprovacao e SegundaAprovacao em paralelo.
+
 4 - Cada atividade avalia o pedido com base em critérios específicos como valor total, quantidade de itens e depois disso retorna um resultado.
+
 5 - O PedidoApprovalFunction recebe os resultados das atividades e toma uma decisão final sobre o status do pedido.
+
 6 - O resultado final é retornado como resposta ao cliente que submeteu o pedido.
